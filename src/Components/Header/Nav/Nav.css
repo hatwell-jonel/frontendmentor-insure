@@ -1,0 +1,153 @@
+.navbar {
+  width: 100%;
+  background-color: #fff;
+  padding: 1.2rem 0rem;
+  z-index: 1000;
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-container {
+  background-color: var(--Very-dark-violet);
+  position: absolute;
+  top: 4.3rem;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  transform: scale(0);
+  opacity: 0;
+  transition: 0.1s ease-in-out;
+}
+
+.menu-container.active {
+  height: 100vh;
+  z-index: 1000;
+  transform: scale(1);
+  opacity: 1;
+  transition: 0.1s ease-in-out;
+}
+
+.menu-container.active body {
+  overflow: hidden;
+}
+
+.menu-item {
+  margin-top: 3.8rem;
+}
+
+.menu-item li {
+  cursor: pointer;
+  width: 80%;
+  margin: 0.5rem auto;
+  text-align: center;
+  padding: 0.5rem 0rem;
+}
+
+.menu-item li a {
+  color: #fff;
+  text-transform: uppercase;
+  font-family: var(--font-Karla);
+  font-weight: 700;
+  letter-spacing: 1px;
+  word-spacing: 2px;
+  font-size: 1.2rem;
+  transition: .3s linear;
+}
+
+.menu-item li:hover a{
+  color: var(--dark-gray);
+}
+
+.menu-item li:last-child {
+  border: 1px solid #fff;
+  transition: .3s linear;
+}
+
+.menu-item li:last-child:hover{
+  background-color: var(--dark-gray);
+  color: var(--dark-gray);
+}
+.menu-item li:last-child:hover a{
+  color: var(--Very-dark-violet);
+}
+
+.menu-container img {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  max-height: 225px;
+  min-height: 225px;
+}
+
+@media screen and (min-width: 768px) {
+  .menu-container {
+    background-color: transparent;
+    position: relative;
+    top: inherit;
+    left: inherit;
+    bottom: inherit;
+    right: inherit;
+    z-index: 1;
+    transform: scale(1);
+    opacity: 1;
+    transition: 0.1s ease-in-out;
+  }
+  .menu-container.active {
+    height: inherit;
+  }
+
+  .menu-item {
+    margin-top: 0rem;
+    display: flex;
+  }
+
+  .menu-item li {
+    width: inherit;
+    margin: 0rem 0.2rem;
+    text-align: center;
+    padding: 0.5rem 1rem;
+  }
+
+  .menu-item li:last-child {
+    border: 1px solid var(--Very-dark-violet);
+  }
+  .menu-item li:last-child a {
+    color: var(--Very-dark-violet);
+  }
+
+  .menu-item li a {
+    color: var(--dark-gray);
+    text-transform: uppercase;
+    font-family: var(--font-Karla);
+    font-weight: 700;
+    letter-spacing: 1px;
+    word-spacing: 0px;
+    font-size: 1.1rem;
+  }
+
+  .menu-item li:hover a{
+    color: var(--Very-dark-violet);
+  }
+
+  .menu-item li:last-child:hover{
+    background-color: var(--Very-dark-violet);
+    color: var(--dark-gray);
+  }
+
+  .menu-item li:last-child:hover a{
+    color: var(--gray);
+  }
+
+  .navbar .container > img {
+    display: none;
+  }
+
+  .menu-container img {
+    display: none;
+  }
+}
